@@ -1,2 +1,2 @@
 # weather-forecast-api-project
-Based on https://m3o.com/weather/api
+https://www.metaweather.com/api/
