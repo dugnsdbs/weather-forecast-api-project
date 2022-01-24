@@ -12,9 +12,3 @@
 // CSS
 
 
-fetch('https://www.metaweather.com/api/location/search/?query=san')
-.then(response => response.json())
-.then(data => {
-  console.log(data)
-})
-
