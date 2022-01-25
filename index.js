@@ -128,7 +128,6 @@ function sentenceCase (string) {
 function celsiusToF (temp) {
     return (temp * 9/5) + 32; 
 }
-
 // use current date data 
 // apply its data into the last part
 function todayWeather (weatherInfo) {
@@ -142,15 +141,11 @@ function todayWeather (weatherInfo) {
 // need to change parseInt
     let visibility = Math.trunc(todayWeather.visibility);
 // need to change parseInt and miles 
-    let winSpeed = Math.trunc(todayWeather.wind_speed);
-    
-  
-
+    let winSpeed = Math.trunc(todayWeather.wind_speed);  
 //temperature
     const temperatureChart = document.querySelector("#temperate");
         temperatureChart.innerText = "";
         temperatureChart.innerText = `High : ${maxTemp} & Low: ${minTemp}`
-
 // humidity
     const humidityChart = document.querySelector("#percentage");
         humidityChart.innerText = "";
