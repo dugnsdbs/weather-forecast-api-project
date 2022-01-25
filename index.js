@@ -4,14 +4,26 @@ let city = 'new%20york';
 document.addEventListener('DOMContentLoaded', () => {
     getLocation();
     locationSearch ()
+    locationSearchs ()
 
 })
+function locationSearchs (){
+    fetch(`${baseURL}/search/?query=san`)
+    .then(response => response.json())
+    .then(citys => {
+        console.log(citys)
+    })
+}
+
+
+
+
 
 // fetch One City Info
 function locationSearch (){
     fetch(`${baseURL}/search/?query=${city}`)
     .then(response => response.json())
-    .then(city => {city =>
+    .then(city => {
         console.log(city)
         updateCityList (city)    
     })
