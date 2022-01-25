@@ -116,9 +116,10 @@ function displayCurrentForecast (weatherData) {
     const currentForecast = weatherData.consolidated_weather[0]
     placeAndTime.textContent = `Forecast for ${weatherData.title} today (${week[today]}, 
                                 ${month[date.getMonth() + 1]} ${ddDay}, ${yyyyYear}):`
-    todaysForecast.textContent = `HIGH: ${celsiusToF(currentForecast.max_temp)}° F
-                                LOW: ${celsiusToF(currentForecast.min_temp)}° F, 
-                                CONDITIONS: ${sentenceCase(currentForecast.weather_state_name)}.`;
+    todaysForecast.textContent = `Temperatures between ${celsiusToF(Math.trunc(currentForecast.min_temp))} 
+                                and ${celsiusToF(Math.trunc(currentForecast.max_temp))}° F. 
+                                ${sentenceCase(currentForecast.weather_state_name)}. 
+                                ${Math.trunc(currentForecast.humidity)}% humidity. Winds reaching ${Math.trunc(currentForecast.wind_speed)} mph.`;
 }
 
 function sentenceCase (string) {
