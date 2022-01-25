@@ -3,9 +3,47 @@ let city = 'new%20york';
 
 document.addEventListener('DOMContentLoaded', () => {
     getLocation();
-
+    locationSearch ()
 
 })
+
+function locationSearch (){
+    fetch(`${baseURL}/search/?query=${city}`)
+    .then(response => response.json())
+    .then(city => {city =>
+        console.log(city)
+        updateCityList (city)    
+    })
+}
+function updateCityList (city){
+    city.forEach(cityInfo => currentLocation(cityInfo))
+
+}
+
+// search submit
+// need to get info from different api url
+function currentLocation(cityInfo){
+    let currentLocation = cityInfo.title;
+    console.log(currentLocation)
+
+    const cityDisplaySection = document.querySelector("body > div.search-area > h2");
+
+    const form = document.querySelector("body > nav > div > form");
+
+    form.addEventListener('submit', (e) =>{
+        e.preventDefault()
+        let input = e.target["city-name-zipcode"].value;
+        if(input == currentLocation){
+            cityDisplaySection.innerText = "";
+            cityDisplaySection.innerText = `${input}`
+        }else{
+            cityDisplaySection.innerText ="wrong city";
+        }
+    })
+}
+
+
+
 
 // five days info from API
 function getLocation (){
@@ -16,6 +54,8 @@ function getLocation (){
         let weatherInfo = data.consolidated_weather;
         updateList(weatherInfo)
         todayWeather (weatherInfo) // use only current date data
+       
+        // console.log(weatherInfo)
     });
 }
 // obj data converted into Array
@@ -27,6 +67,9 @@ function updateList(weatherInfo){
         // todayWeather (dailyWeather)
     })
 }
+
+
+
 
 //display 5 days weather into HTML
 // DAILY forcaseSection
@@ -57,7 +100,7 @@ function todayWeather (weatherInfo) {
 // need to change parseInt and miles 
     let winSpeed = Math.trunc(todayWeather.wind_speed);
     
-    console.log(winSpeed)
+  
 
 //temperature
     const temperatureChart = document.querySelector("#temperate");
