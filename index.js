@@ -1,30 +1,17 @@
 const baseURL = 'https://www.metaweather.com/api/location';
 let city = 'new%20york';
-
+// let city = 'new%20york';
 document.addEventListener('DOMContentLoaded', () => {
     getLocation();
     locationSearch ()
-    locationSearchs ()
-
 })
-function locationSearchs (){
-    fetch(`${baseURL}/search/?query=san`)
-    .then(response => response.json())
-    .then(citys => {
-        console.log(citys)
-    })
-}
 
-
-
-
-
-// fetch One City Info
+// // fetch One City Info
 function locationSearch (){
-    fetch(`${baseURL}/search/?query=${city}`)
+    fetch(`${baseURL}/search/?query=n`)
     .then(response => response.json())
     .then(city => {
-        console.log(city)
+        // getTitle (city)
         updateCityList (city)    
     })
 }
@@ -36,27 +23,28 @@ function updateCityList (city){
 // search submit
 // need to get info from different api url
 function currentLocation(cityInfo){
-// city name variable
-    let currentLocation = cityInfo.title;
+    // city name variable
+    let location = cityInfo.title
+    let currentLocation = location.toLowerCase();
 // purple section where the name of city will appear
     const cityDisplaySection = document.querySelector("body > div.search-area > h2");
 // form create addEent
     const form = document.querySelector("body > nav > div > form");
 // addEvent
-    form.addEventListener('submit', (e) =>{
-        e.preventDefault()
-        let input = e.target["city-name-zipcode"].value;
-        if(input == currentLocation){
-            cityDisplaySection.innerText = "";
-            cityDisplaySection.innerText = `${input}`
-        }else{
-            cityDisplaySection.innerText ="wrong city";
-        }
-    })
+form.addEventListener('submit', (e) =>{
+// no refresh
+    e.preventDefault()
+// input where value is  being submitted
+    let input = e.target["city-name-zipcode"].value;
+// if statement to check input and location match and dipsplay
+    if 
+    ((input[0] === currentLocation[0]) && (input[1] === currentLocation[1]) && (input[2] === currentLocation[2]) && (input[3] === currentLocation[3]) && (input[4] === currentLocation[4]) && (input[5] === currentLocation[5])) 
+    {
+        cityDisplaySection.innerText = "";
+    cityDisplaySection.innerText = `${currentLocation}`;
+         }
+     })   
 }
-
-
-
 
 // five days info from API
 function getLocation (){
@@ -66,8 +54,7 @@ function getLocation (){
         // console.log(data.consolidated_weather)
         let weatherInfo = data.consolidated_weather;
         updateList(weatherInfo)
-        todayWeather (weatherInfo) // use only current date data
-       
+        todayWeather (weatherInfo) // use only current date data       
         // console.log(weatherInfo)
     });
 }
@@ -80,10 +67,6 @@ function updateList(weatherInfo){
         // todayWeather (dailyWeather)
     })
 }
-
-
-
-
 //display 5 days weather into HTML
 // DAILY forcaseSection
 function fiveDays(dailyWeather){
@@ -94,10 +77,7 @@ function fiveDays(dailyWeather){
     const dateTwo= document.getElementById('date_two');
     dateTwo.innerText ="";
     dateTwo.innerText = Date()+1
-
-
 }
-
 // use current date data 
 // apply its data into the last part
 function todayWeather (weatherInfo) {
@@ -111,15 +91,11 @@ function todayWeather (weatherInfo) {
 // need to change parseInt
     let visibility = Math.trunc(todayWeather.visibility);
 // need to change parseInt and miles 
-    let winSpeed = Math.trunc(todayWeather.wind_speed);
-    
-  
-
+    let winSpeed = Math.trunc(todayWeather.wind_speed);  
 //temperature
     const temperatureChart = document.querySelector("#temperate");
         temperatureChart.innerText = "";
         temperatureChart.innerText = `High : ${maxTemp} & Low: ${minTemp}`
-
 // humidity
     const humidityChart = document.querySelector("#percentage");
         humidityChart.innerText = "";
