@@ -1,0 +1,99 @@
+.nav-box{
+  background-color: rgba(155, 155, 238, 0.479);
+  width: auto;
+  height: 150px;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.website{
+  font-size: 50px;
+}
+
+.search{
+  font-size: 30px;
+}
+
+.search-box{
+  margin: 50px;
+}
+
+.menu{
+  background-color: rgb(224, 224, 71);
+  height:40px;
+  padding:15px;
+  margin:25px;
+  border: 2px solid black;
+}
+
+.small-box{
+  font-size: 30px;
+}
+
+.search-area{
+  background-color: rgb(108, 187, 108);
+  width: auto;
+  height: 250px;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.current-location{
+  background-color: rebeccapurple;
+  width: auto;
+  height: 50px;
+  margin: 10px;
+  border: 2px solid black;
+}
+
+#temperature{
+  background-color: aqua;
+  width: auto;
+  height: 130px;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid black;
+  font-size: 40px;
+}
+
+.parent-box{
+  background-color: rgb(211, 165, 123);
+  height: 250px;
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content:center;
+  border: 2px solid black;
+}
+
+#child-box{
+  background-color: rgb(146, 146, 102);
+  border: 2px solid black;
+  width: 150px;
+  height:250px;
+  justify-content: space-evenly;
+  align-self: baseline;
+}
+
+.parent-weather-today{
+  background-color: rgb(243, 92, 92);
+  height: 150px;
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content:center;
+  border: 2px solid black;
+}
+
+#child-weather{
+  background-color: rgb(146, 146, 102);
+  border: 2px solid black;
+  width: 200px;
+  height:50px;
+  justify-content: space-evenly;
+  align-self: baseline;
+  padding: 30px;
+  margin:25px,10px;
+}

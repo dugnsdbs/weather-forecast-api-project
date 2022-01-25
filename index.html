@@ -4,14 +4,91 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <title>Weather</title>
+  <nav>
+    <div class ="nav-box">
+      <form class ='area-check'>
+        <a class ="website">Weather Channel</a>
+        <a class ="search-box">
+        <input type='text' class = " search" name='city-name-zipcode' placeholder = "Search City or Zipcode"/> 
+        <button class = 'submit' type = "submit" > Search</button>
+      </a>
+          <div class ="menu">
+              <a id ='today'>
+                <span class = 'small-box'>Today</span>
+              </a>
+              <a id ='seven-days'>
+                <span class = 'small-box'>7 days</span>
+              </a>
+              <a id ='Contact'>
+                 <span class = 'small-box'>Contact</span>
+              </a>
+          </div>
+      </form>
+    </div>
+  </nav>
 </head>
+
 <body>
-  <p>project 1</p>
 
- 
+  <div class ='search-area'>
+    <h2 class ="current-location">display the current location and hour (search submit)</h2>
+      <div id = "temperature">display today temperature and weather condition (today click)</div>
+  </div>
 
+  <div class ="parent-box">
+    <h2 class ="weather-chart">Daily Forecast (7days click)</h2>
+      <div id = "child-box">
+         <img id = "sunday-weather-picture" src = "">
+          <span id = date>Sunday</span>
+      </div>
+      <div id = "child-box">
+        <img id = "monday-weather-picture" src = "">
+          <span id = date>Monday</span>
+      </div>
+      <div id = "child-box">
+        <img id = "tuesday-weather-picture" src = "">
+          <span id = date>Tuesday</span>
+      </div>
+      <div id = "child-box">
+        <img id = "wednesday-weather-picture" src = "">
+          <span id = date>Wednesday</span>
+      </div>
+      <div id = "child-box">
+        <img id = "thursday-weather-picture" src = "">
+          <span id = date>Thursday</span>
+      </div>
+      <div id = "child-box">
+        <img id = "friday-weather-picture" src = "">
+          <span id = date>Friday</span>
+      </div>
+      <div id = "child-box">
+        <img id = "saturday-weather-picture" src = "">
+          <span id = date>Saturday</span>
+      </div>
+  </div>
 
-<script src="src/index.js"></script>
+  <div class ="parent-weather-today">
+    <h2>today weather (optional)</h2>
+    <div id = "child-weather">
+      <span id ="status">High / Low</span>
+      <span id = "temperate"> put high and low</span>
+    </div>
+    <div id = "child-weather">
+      <span id ="status">humidity</span>
+      <span id = "percentage"> humidity percentage</span>
+    </div>
+    <div id = "child-weather">
+      <span id ="status">wind</span>
+      <span id = "percentage"> ?mph</span>
+    </div>
+    <div id = "child-weather">
+      <span id ="status">visibility</span>
+      <span id = "visibility"> ?mi</span>
+    </div>
+  </div>
+
+<script src="./index.js"></script>
 </body>
 </html>

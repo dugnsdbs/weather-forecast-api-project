@@ -10,5 +10,3 @@
 // Submit : enter date + location for forecast lookup and comment on the forecast 
 
 // CSS
-
-
