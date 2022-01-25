@@ -40,7 +40,7 @@
   border: 2px solid black;
 }
 
-.current-location{
+.place-and-time{
   background-color: rebeccapurple;
   width: auto;
   height: 50px;
@@ -48,7 +48,7 @@
   border: 2px solid black;
 }
 
-#temperature{
+#todays-forecast{
   background-color: aqua;
   width: auto;
   height: 130px;
@@ -68,7 +68,7 @@
   border: 2px solid black;
 }
 
-.child-box{
+.forecast-card{
   background-color: rgb(146, 146, 102);
   border: 2px solid black;
   width: 150px;

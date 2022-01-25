@@ -5,13 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <title>Weather</title>
+  <title>Weather Channel</title>
   <nav>
     <div class ="nav-box">
       <form class ='area-check'>
         <a class ="website">Weather Channel</a>
         <a class ="search-box">
-        <input type='text' class = " search" name='city-name-zipcode' placeholder = "Search City or Zipcode"/> 
+        <input type='text' class = " search" name='city-name-zipcode' placeholder = "Search by city"/> 
         <button class = 'submit' type = "submit" > Search</button>
       </a>
           <div class ="menu">
@@ -33,31 +33,31 @@
 <body>
 
   <div class ='search-area'>
-    <h2 class ="current-location">display the current location and hour (search submit)</h2>
-      <div id = "temperature">display today temperature and weather condition (today click)</div>
+    <h2 class ="place-and-time">display the current location and hour (search submit)</h2>
+      <div id = "todays-forecast">display today temperature and weather condition (today click)</div>
   </div>
 
   <div class ="parent-box">
-    <h2 class ="weather-chart">Daily Forecast (5 days click)</h2>
-      <div class = "child-box" >
+    <h2 class ="weather-chart">Five-Day Forecast</h2>
+      <div class = "forecast-card" >
          <img id = "sunday-weather-picture" src = "">
-          <span id="date_one">Current Date</span>
+          <span class = "dayOfWeek">Sunday</span>
       </div>
-      <div class = "child-box">
+      <div class = "forecast-card">
         <img id = "monday-weather-picture" src = "">
-          <span id = date_two>Monday</span>
+          <span class = "dayOfWeek">Monday</span>
       </div>
-      <div class = "child-box">
+      <div class = "forecast-card">
         <img id = "tuesday-weather-picture" src = "">
-          <span id = date_three>Tuesday</span>
+          <span class = "dayOfWeek">Tuesday</span>
       </div>
-      <div class = "child-box">
+      <div class = "forecast-card">
         <img id = "wednesday-weather-picture" src = "">
-          <span id = date_four>Wednesday</span>
+          <span class = "dayOfWeek">Wednesday</span>
       </div>
-      <div class = "child-box">
+      <div class = "forecast-card">
         <img id = "thursday-weather-picture" src = "">
-          <span id = date_five>Thursday</span>
+          <span class = "dayOfWeek">Thursday</span>
       </div>
   </div>
 
