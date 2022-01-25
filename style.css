@@ -68,7 +68,7 @@
   border: 2px solid black;
 }
 
-#child-box{
+.child-box{
   background-color: rgb(146, 146, 102);
   border: 2px solid black;
   width: 150px;
