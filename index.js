@@ -102,19 +102,25 @@ function displayFiveDayForecast (weatherData) {
         const highTemp = document.createElement('li');
         const lowTemp = document.createElement('li');
         const conditions = document.createElement('li');
+        const humidity = document.createElement('li');
+        const wind = document.createElement('li');
         highTemp.textContent =  `HIGH: ${celsiusToF(Math.trunc(daysWeather.max_temp))}° F`;
         lowTemp.textContent = `LOW: ${celsiusToF(Math.trunc(daysWeather.min_temp))}° F,` 
         conditions.textContent = `CONDITIONS: ${sentenceCase(daysWeather.weather_state_name)}.`;
+        humidity.textContent =  `HUMIDITY: ${Math.trunc(daysWeather.humidity)}%`;
+        wind.textContent = `WIND SPEED: ${Math.trunc(daysWeather.wind_speed)} mph`;
         day.appendChild(highTemp);
         day.appendChild(lowTemp);
         day.appendChild(conditions);
+        day.appendChild(humidity);
+        day.appendChild(wind);
         selectDay++;
     }
 }
 
 function displayCurrentForecast (weatherData) {
     const currentForecast = weatherData.consolidated_weather[0]
-    placeAndTime.textContent = `Forecast for ${weatherData.title} today (${week[today]}, 
+    placeAndTime.textContent = `Forecast for ${weatherData.title}, ${weatherData.parent.title} today (${week[today]}, 
                                 ${month[date.getMonth() + 1]} ${ddDay}, ${yyyyYear}):`
     todaysForecast.textContent = `Temperatures between ${celsiusToF(Math.trunc(currentForecast.min_temp))} 
                                 and ${celsiusToF(Math.trunc(currentForecast.max_temp))}° F. 
