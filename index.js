@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
+// fetch One City Info
 function locationSearch (){
     fetch(`${baseURL}/search/?query=${city}`)
     .then(response => response.json())
@@ -15,21 +16,21 @@ function locationSearch (){
         updateCityList (city)    
     })
 }
+
+// forEach city Info
 function updateCityList (city){
     city.forEach(cityInfo => currentLocation(cityInfo))
-
 }
-
 // search submit
 // need to get info from different api url
 function currentLocation(cityInfo){
+// city name variable
     let currentLocation = cityInfo.title;
-    console.log(currentLocation)
-
+// purple section where the name of city will appear
     const cityDisplaySection = document.querySelector("body > div.search-area > h2");
-
+// form create addEent
     const form = document.querySelector("body > nav > div > form");
-
+// addEvent
     form.addEventListener('submit', (e) =>{
         e.preventDefault()
         let input = e.target["city-name-zipcode"].value;
