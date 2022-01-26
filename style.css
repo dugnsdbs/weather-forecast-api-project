@@ -1,5 +1,10 @@
+body{
+  background-color: #222831;
+  box-sizing: border-box;
+  
+}
 .nav-box{
-  background-color: rgba(155, 155, 238, 0.479);
+  background-color: #393E46;
   width: auto;
   height: 150px;
   margin: 10px;
@@ -9,6 +14,9 @@
 
 .website{
   font-size: 50px;
+  color: #eeeeee;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding-left: 50px
 }
 
 .search{
@@ -17,22 +25,72 @@
 
 .search-box{
   margin: 50px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.submit{
+  margin-left: 20px;
+  position: relative;
+  border: none;
+  outline: none;
+  width: 80px;
+  height: 35px;
+  background-color: #fd7014;
+  font-size: 1.4rem;
+  color: #fff;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
+button::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  background-color:#13cf0d;
+  z-index: -1;
+  border-radius:7px;
+  transform:translateY(5px);
+}
+
+button:active{
+  transform:translateY(5px);
+}
+
+button:active:before{
+  transform: translateY(0);
 }
 
 .menu{
-  background-color: rgb(224, 224, 71);
-  height:40px;
-  padding:15px;
-  margin:25px;
-  border: 2px solid black;
+  text-align: center;
+  height:50px;
+  box-sizing: border-box;
+  width: 95%;
+  margin-top:20px;
+  position:absolute;
+  color:white;
 }
 
 .small-box{
   font-size: 30px;
 }
 
+.above-search-area{
+  width: auto;
+  background-color: #fd7014;
+  text-align: center;
+  font-size: 40px;;
+  border: 2px solid black;
+  color:white;
+  padding:5px;
+}
+
 .search-area{
-  background-color: rgb(108, 187, 108);
+  background-color: #393e46;
   width: auto;
   height: 250px;
   margin: 10px;
@@ -41,7 +99,7 @@
 }
 
 .place-and-time{
-  background-color: rebeccapurple;
+  background-color: #eeeeee;
   width: auto;
   height: 50px;
   margin: 10px;
@@ -49,7 +107,7 @@
 }
 
 #todays-forecast{
-  background-color: aqua;
+  background-color: #eeeeee;
   width: auto;
   height: 130px;
   margin: 10px;
@@ -58,27 +116,37 @@
   font-size: 40px;
 }
 
+.five-days-title{
+  width: auto;
+  background-color: #fd7014;
+  text-align: center;
+  font-size: 40px;;
+  border: 2px solid black;
+  color:white;
+  padding:5px;
+}
+
 .parent-box{
-  background-color: rgb(211, 165, 123);
-  height: 250px;
+  background-color: #393e46;
+  width:auto;
+  height: 200px;
   margin: 10px;
   padding: 20px;
   display: flex;
   justify-content:center;
   border: 2px solid black;
+  color:black;
 }
 
 .forecast-card{
-  background-color: rgb(146, 146, 102);
+  background-color: #eeeeee;
   border: 2px solid black;
-  width: 150px;
-  height:250px;
-  justify-content: space-evenly;
-  align-self: baseline;
+  width: 200px;
+  height:200px;
 }
 
 .parent-weather-today{
-  background-color: rgb(243, 92, 92);
+  background-color: #393e46;
   height: 150px;
   margin: 10px;
   padding: 20px;
@@ -87,8 +155,18 @@
   border: 2px solid black;
 }
 
+.today{
+  width: auto;
+  background-color: #fd7014;
+  text-align: center;
+  font-size: 40px;;
+  border: 2px solid black;
+  color:white;
+  padding:5px;
+}
+
 #child-weather{
-  background-color: rgb(146, 146, 102);
+  background-color: white;
   border: 2px solid black;
   width: 200px;
   height:50px;

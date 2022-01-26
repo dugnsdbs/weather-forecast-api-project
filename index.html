@@ -9,7 +9,7 @@
   <nav>
     <div class ="nav-box">
       <form class ='area-check'>
-        <a class ="website">Weather Channel</a>
+        <a class ="website">Welcome to Weather Channel</a>
         <a class ="search-box">
         <input type='text' class = " search" name='city-name-zipcode' placeholder = "Search by city"/> 
         <button class = 'submit' type = "submit" > Search</button>
@@ -31,14 +31,15 @@
 </head>
 
 <body>
-
+  <div class = "above-search-area">Today Weather</div>
   <div class ='search-area'>
     <h2 class ="place-and-time">display the current location and hour (search submit)</h2>
       <div id = "todays-forecast">display today temperature and weather condition (today click)</div>
   </div>
 
+  <div class = "five-days-title">Five-Day Forecast</div>
   <div class ="parent-box">
-    <h2 class ="weather-chart">Five-Day Forecast</h2>
+    
       <div class = "forecast-card" >
          <img id = "sunday-weather-picture" src = "">
           <span class = "dayOfWeek">Sunday</span>
@@ -61,8 +62,9 @@
       </div>
   </div>
 
+  <div class = "today">Today Extra Stuff</div>
   <div class ="parent-weather-today">
-    <h2>today weather (optional)</h2>
+    
     <div id = "child-weather">
       <!-- <span id ="status">High / Low</span> -->
       <span id = "temperate"> put high and low</span>
