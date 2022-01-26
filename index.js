@@ -1,5 +1,7 @@
 const baseURL = 'https://www.metaweather.com/api/location/';
 let locationInput = "new%20york"
+let currentCity;
+let currentCityLocation;
 
 function setFormattedLocation (str) {
     locationInput = str.replace(' ', '%20') 
@@ -53,10 +55,7 @@ const month = {
 const placeAndTime = document.querySelector('.place-and-time');
 const todaysForecast = document.querySelector('#todays-forecast');
 
-const weekdays = document.querySelectorAll('span.dayOfWeek');
-const fiveDayForecast = document.querySelectorAll('.forecast-card');
-
-//Initially populate with weather icons, replace with weather on search.
+const fiveDayForecast = document.querySelectorAll('div .forecast-card');
 
 document.addEventListener('DOMContentLoaded', () => {
     lookUpByLocation();
@@ -84,39 +83,44 @@ function getWeatherData (inData) {
         displayFiveDayForecast(outData);
     })
 }
+const dayOfWeek = document.querySelectorAll('.dayOfWeek');
+const weatherImgs = document.querySelectorAll('.weather-img'); 
+const fiveDayData = document.querySelectorAll('.fullWeatherData')
+// const fiveDayDataDisplay
 
 function displayFiveDayForecast (weatherData) {
     let selectDay = 0;
     for (day of fiveDayForecast) {
-        day.innerHTML = `<strong>${week[(today + selectDay) % 7]}</strong>`; 
         const daysWeather = weatherData.consolidated_weather[selectDay];
         const highTemp = document.createElement('li');
         const lowTemp = document.createElement('li');
         const conditions = document.createElement('li');
         const humidity = document.createElement('li');
         const wind = document.createElement('li');
+        fiveDayData[selectDay].textContent = '';
+        dayOfWeek[selectDay].innerHTML = `<strong>${week[(today + selectDay) % 7]}</strong>`; 
         highTemp.textContent =  `HIGH: ${roundOff(celsiusToF(daysWeather.max_temp))}° F`;
         lowTemp.textContent = `LOW: ${roundOff(celsiusToF(daysWeather.min_temp))}° F,` 
         conditions.textContent = `CONDITIONS: ${sentenceCase(daysWeather.weather_state_name)}.`;
         humidity.textContent =  `HUMIDITY: ${roundOff(daysWeather.humidity)}%`;
         wind.textContent = `WIND SPEED: ${roundOff(daysWeather.wind_speed)} mph`;
-        day.appendChild(highTemp);
-        day.appendChild(lowTemp);
-        day.appendChild(conditions);
-        day.appendChild(humidity);
-        day.appendChild(wind);
+        weatherImgs[selectDay].src = `https://www.metaweather.com/static/img/weather/${daysWeather.weather_state_abbr}.svg`;
+        fiveDayData[selectDay].appendChild(highTemp);
+        fiveDayData[selectDay].appendChild(lowTemp);
+        fiveDayData[selectDay].appendChild(conditions);
+        fiveDayData[selectDay].appendChild(humidity);
+        fiveDayData[selectDay].appendChild(wind);
         selectDay++;
     }
 }
 //
 function displayCurrentForecast (weatherData) {
-    const currentForecast = weatherData.consolidated_weather[0]
+    const thisForecast = weatherData.consolidated_weather[0];
+    currentCity = weatherData.title;
+    currentCityLocation = weatherData.parent.title;
     placeAndTime.textContent = `Forecast for ${weatherData.title}, ${weatherData.parent.title} today (${week[today]}, 
-                                ${month[date.getMonth() + 1]} ${ddDay}, ${yyyyYear}):`
-    todaysForecast.textContent = `Temperatures between ${roundOff(celsiusToF(currentForecast.min_temp))} 
-                                and ${roundOff(celsiusToF(currentForecast.max_temp))}° F. 
-                                ${sentenceCase(currentForecast.weather_state_name)}. 
-                                ${roundOff(currentForecast.humidity)}% humidity. Winds reaching ${roundOff(currentForecast.wind_speed)} mph.`;
+                                ${month[date.getMonth() + 1]} ${ddDay}, ${yyyyYear})`
+    todaysForecast.textContent = `TEMPERATURES FROM ${roundOff(celsiusToF(thisForecast.min_temp))}–${roundOff(celsiusToF(thisForecast.max_temp))}° F...${thisForecast.weather_state_name.toUpperCase()}...${roundOff(thisForecast.humidity)}% HUMIDITY...WINDS REACHING ${roundOff(thisForecast.wind_speed)} MPH...`;
 }
 
 function sentenceCase (string) {
@@ -184,8 +188,8 @@ commentForm.addEventListener('submit', (e)=>{
 
 function addingComment(commentInput){
     const storeComment = document.querySelector('.commentSubmittedBox');
-    const paragraphComment = document.createElement('li');
-    paragraphComment.innerText = `${commentInput} `;
+    const paragraphComment = document.createElement('p');
+    paragraphComment.innerHTML = `<em>Anonymous comment on the forecast for ${currentCity}, ${currentCityLocation}:</em> <br><br> ${commentInput}<br><br>`;
     storeComment.appendChild(paragraphComment);
 
     const btn = document.createElement('button');

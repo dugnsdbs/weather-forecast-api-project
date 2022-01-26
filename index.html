@@ -9,46 +9,50 @@
   <nav>
     <div class ="nav-box">
       <form class ='area-check'>
-        <a class ="website">Welcome to Weather Channel</a>
+        <a class ="website">Weather Channel</a>
         <a class ="search-box">
         <input type='text' class = " search" name='city-name-zipcode' placeholder = "Search by city" id="locationSearch"/> 
         <button class = 'submit' type = "submit" id="location_seach"> Search</button>
       </a>
     </form>
   </div>
-  
   </nav>
 </head>
 
 <body>
   <div class = "todays-forecast-banner">Today</div>
-  <div class ='todays-forecast'>
+  <div class ='current-forecast'>
     <h2 class ="place-and-time">display the current location and hour (search submit)</h2>
-      <div id = "todays-forecast">display today temperature and weather condition (today click)</div>
+  <div id="todays-forecast-container"><div id = "todays-forecast">display today temperature and weather condition (today click)</div></div>
   </div>
 
   <div class = "five-days-title">Five-Day Forecast</div>
   <div class ="parent-box">
     
       <div class = "forecast-card" >
-        <span class = "dayOfWeek">Sunday</span>
+        <span class = "dayOfWeek"></span>
         <img class = "weather-img" src = "">
+        <span class = "fullWeatherData"></span>
       </div>
       <div class = "forecast-card">
-        <span class = "dayOfWeek">Monday</span>
+        <span class = "dayOfWeek"></span>
         <img class = "weather-img" src = "">
+        <span class = "fullWeatherData"></span>
       </div>
       <div class = "forecast-card">
-        <span class = "dayOfWeek">Tuesday</span>
+        <span class = "dayOfWeek"></span>
         <img class = "weather-img" src = "">
+        <span class = "fullWeatherData"></span>
       </div>
       <div class = "forecast-card">
-        <span class = "dayOfWeek">Wednesday</span>
+        <span class = "dayOfWeek"></span>
         <img class = "weather-img" src = "">
+        <span class = "fullWeatherData"></span>
       </div>
       <div class = "forecast-card">
-        <span class = "dayOfWeek">Thursday</span>
+        <span class = "dayOfWeek"></span>
         <img class = "weather-img" src = "">
+        <span class = "fullWeatherData"></span>
       </div>
   </div>
 
@@ -75,25 +79,7 @@
        </a>
     </form>
   </div>
-
-  <!-- <div class ="parent-weather-today">
-    
-    <div id = "contactUsFaceBook">
-      <a herf="" ><img src="https://www.freepnglogos.com/uploads/facebook-logo-icon/facebook-logo-icon-file-facebook-icon-svg-wikimedia-commons-4.png" alt="facebook logo" class = "image"></a>
-    </div>
-    <div id = "contactUsTwitter">
-      <a herf="" ><img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-logo-vector-png-clipart-1.png" alt="twitter logo" class = "image"></a>
-    </div>
-    <div id = "contactUsInstagram">
-      <a herf="" ><img src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-instagram-new-logo-vector-download-13.png" alt="instagram logo" class = "image"></a>
-    </div>
-    <div id = "contactUsYoutube">
-      <a herf="" ><img src="https://www.freepnglogos.com/uploads/youtube-play-red-logo-png-transparent-background-6.png" alt="youtube logo" class = "image"></a>
-    </div>
-  </div> -->
-
-<script src="./index.js"></script>
+  <script src="./index.js"></script>
 </body>
 </html>
-
 
