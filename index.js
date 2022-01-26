@@ -157,10 +157,21 @@ function todayWeather (weatherInfo) {
 }
 
 
+const donationForm = document.querySelector(".donation");
+donationForm.addEventListener("submit", (e) =>{
+    e.preventDefault();
+    const amountInput = e.target.newValue.value;
+    addingAmount(amountInput)
+    })
 
 
-
-
+function addingAmount(amountInput){
+    let startAmount = "";
+    const amountUpdated = document.querySelector(".amountChange");
+    amountUpdated.innerText = "";
+    amountUpdated.innerText = `Amount $ ${amountInput + startAmount}`;
+    return startAmount;
+    }
 
 
 
