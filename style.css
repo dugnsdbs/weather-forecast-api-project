@@ -87,7 +87,7 @@ button:active:before{
   font-size: 30px;
 }
 
-.above-search-area{
+.todays-forecast-banner{
   width: auto;
   background-color: #fd7014;
   text-align: center;
@@ -97,7 +97,7 @@ button:active:before{
   padding:5px;
 }
 
-.search-area{
+.todays-forecast{
   background-color: #393e46;
   width: auto;
   height: 250px;
