@@ -53,13 +53,6 @@ const todaysForecast = document.querySelector('#todays-forecast');
 const weekdays = document.querySelectorAll('span.dayOfWeek');
 const fiveDayForecast = document.querySelectorAll('.forecast-card');
 
-let nextDay = 0;
-for (day of weekdays){
-    day.textContent = week[(today + nextDay) % 7]
-    nextDay++;
-}
-
-
 //Initially populate with weather icons, replace with weather on search.
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -86,11 +79,6 @@ function getWeatherData (inData) {
         console.log(outData);
         displayCurrentForecast(outData);
         displayFiveDayForecast(outData);
-        // displayFiveDayForecast
-        // placeAndTime.textContent = 
-        // `Forecast for ${outData.parent.title}, ${week[today]}, ${month[date.getMonth() + 1]} ${ddDay}, ${yyyyYear}:`
-        console.log(outData.consolidated_weather[0])
-        // todaysForecast.textContent = `${}`
     })
 }
 
