@@ -173,3 +173,27 @@ function addingAmount(amountInput){
     totalDonations += parseInt(amountInput);
     amountUpdated.innerText = `Total Donations: $${totalDonations}`;
     }
+
+const commentForm = document.querySelector("form.commentForm");
+commentForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const commentInput = e.target.comments.value;
+    addingComment(commentInput)
+    commentForm.reset();
+})
+
+function addingComment(commentInput){
+    const storeComment = document.querySelector('.commentSubmittedBox');
+    const paragraphComment = document.createElement('li');
+    paragraphComment.innerText = `${commentInput}`;
+    storeComment.appendChild(paragraphComment);
+
+    const btn = document.createElement('button');
+    btn.innerText = "delete";
+    paragraphComment.appendChild(btn);
+
+    btn.addEventListener('click', clickDelete)
+}
+function clickDelete(e){
+    e.target.parentNode.remove();
+}

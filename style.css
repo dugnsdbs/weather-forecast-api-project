@@ -178,3 +178,30 @@ button:active:before{
   max-height:100%;
 }
 
+.commentBox{
+  background-color: #393e46;
+  width:auto;
+  height: 150px;
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content:center;
+  border: 2px solid black;
+  color:black;
+}
+#comments{
+  width: 500px;
+  height: 130px;
+}
+
+.commentSubmittedBox{
+  background-color: #393e46;
+  width:auto;
+  height: 150px;
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content:center;
+  border: 2px solid black;
+  color:black;
+}
