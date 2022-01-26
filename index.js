@@ -52,10 +52,23 @@ const month = {
     12: "December"
 };
 
+const weatherStates = {
+    sn: '🌨️',
+    sl: '🌧️🌧️',
+    h:'⛈️',
+    t: '⛈️',
+    hr:'🌧️🌧️',
+    lr:'🌧️',
+    s: '🌧️⛅',
+    hc: '☁️☁️',
+    lc: '☁️',
+    c: '☀️'
+}
+
 const placeAndTime = document.querySelector('.place-and-time');
 const todaysForecast = document.querySelector('#todays-forecast');
-
 const fiveDayForecast = document.querySelectorAll('div .forecast-card');
+let fiveDayForecastBannerText = document.querySelector('.five-days-title').textContent;
 
 document.addEventListener('DOMContentLoaded', () => {
     lookUpByLocation();
@@ -112,14 +125,15 @@ function displayFiveDayForecast (weatherData) {
         fiveDayData[selectDay].appendChild(wind);
         selectDay++;
     }
+    fiveDayForecastBannerText += (weatherStates[weatherData.consolidated_weather[0].weather_state_abbr]); 
 }
 //
 function displayCurrentForecast (weatherData) {
     const thisForecast = weatherData.consolidated_weather[0];
     currentCity = weatherData.title;
     currentCityLocation = weatherData.parent.title;
-    placeAndTime.textContent = `Forecast for ${weatherData.title}, ${weatherData.parent.title} today (${week[today]}, 
-                                ${month[date.getMonth() + 1]} ${ddDay}, ${yyyyYear})`
+    placeAndTime.textContent = `Forecast for ${weatherData.title}, ${weatherData.parent.title} today, ${week[today]} 
+                                ${month[date.getMonth() + 1]} ${ddDay}, ${yyyyYear}`
     todaysForecast.textContent = `TEMPERATURES FROM ${roundOff(celsiusToF(thisForecast.min_temp))}–${roundOff(celsiusToF(thisForecast.max_temp))}° F...${thisForecast.weather_state_name.toUpperCase()}...${roundOff(thisForecast.humidity)}% HUMIDITY...WINDS REACHING ${roundOff(thisForecast.wind_speed)} MPH...`;
 }
 

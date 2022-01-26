@@ -98,6 +98,11 @@ button:active:before{
   padding:5px;
 }
 
+.dayOfWeek{
+  text-align:center;
+  font-family
+}
+
 .weather-img{
   width: 100%;
   height: 60%;
@@ -109,13 +114,15 @@ button:active:before{
 }
 
 .place-and-time{
-  background-color: #eeeeee;
   width: auto;
-  height: 50px;
-  margin: 10px;
-  border: 2px solid black;
+  background-color: #fd7014;
   text-align: center;
-  padding: 10px;
+  font-size: 2.0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style:italic;
+  border: 2px solid black;
+  color:white;
+  padding:5px;
 }
 
 #todays-forecast-container{
@@ -137,16 +144,18 @@ button:active:before{
   font-family: Arial, Helvetica, sans-serif;
   color:blue;
   
-  -moz-animation: my-animation 15s linear infinite;
-  -webkit-animation: my-animation 15s linear infinite;
-  animation: my-animation 15s linear infinite;
+  -moz-animation: my-animation 20s linear infinite;
+  -webkit-animation: my-animation 20s linear infinite;
+  animation: my-animation 20s linear infinite;
 }
 
 .five-days-title{
   width: auto;
   background-color: #fd7014;
   text-align: center;
-  font-size: 40px;;
+  font-size: 2.0em;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style:italic;
   border: 2px solid black;
   color:white;
   padding:5px;
@@ -171,6 +180,8 @@ button:active:before{
   height:370px;
   z-index: 1;
   padding:10px;
+  text-align:center;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 .parent-weather-today{
@@ -187,7 +198,9 @@ button:active:before{
   width: auto;
   background-color: #fd7014;
   text-align: center;
-  font-size: 40px;;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style:italic;
+  font-size: 40px;
   border: 2px solid black;
   color:white;
   padding:5px;
