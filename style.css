@@ -129,7 +129,7 @@ button:active:before{
 .parent-box{
   background-color: #393e46;
   width:auto;
-  height: 200px;
+  height: 400px;
   margin: 10px;
   padding: 20px;
   display: flex;
@@ -142,7 +142,7 @@ button:active:before{
   background-color: #eeeeee;
   border: 2px solid black;
   width: 300px;
-  height:200px;
+  height:370px;
 }
 
 .parent-weather-today{
