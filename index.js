@@ -185,7 +185,7 @@ commentForm.addEventListener('submit', (e)=>{
 function addingComment(commentInput){
     const storeComment = document.querySelector('.commentSubmittedBox');
     const paragraphComment = document.createElement('li');
-    paragraphComment.innerText = `${commentInput}`;
+    paragraphComment.innerText = `${commentInput} `;
     storeComment.appendChild(paragraphComment);
 
     const btn = document.createElement('button');
@@ -195,5 +195,6 @@ function addingComment(commentInput){
     btn.addEventListener('click', clickDelete)
 }
 function clickDelete(e){
+    e.preventDefault();
     e.target.parentNode.remove();
 }

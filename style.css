@@ -52,7 +52,7 @@ body{
 .amountChange{
   font-size: 40px;
 }
-button::before{
+/* button::before{
   content:"";
   position:absolute;
   top:0;
@@ -63,15 +63,15 @@ button::before{
   z-index: -1;
   border-radius:7px;
   transform:translateY(5px);
-}
+} */
 
-button:active{
+/* button:active{
   transform:translateY(5px);
 }
 
 button:active:before{
   transform: translateY(0);
-}
+} */
 
 .menu{
   text-align: center;
@@ -203,5 +203,6 @@ button:active:before{
   display: flex;
   justify-content:center;
   border: 2px solid black;
-  color:black;
+  color:white;
+  font-size: 20px;
 }
