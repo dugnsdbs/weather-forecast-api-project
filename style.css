@@ -1,7 +1,6 @@
 body{
   background-color: #222831;
   box-sizing: border-box;
-  
 }
 
 .nav-box{
@@ -11,23 +10,25 @@ body{
   margin: 10px;
   padding: 20px;
   border: 2px solid black;
+  white-space: nowrap;
+  display:flex;
 }
 
 .website{
   font-size: 50px;
   color: #eeeeee;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  padding-left: 50px
+  padding-left: 10px;
 }
 
 .search{
-  font-size: 24px;
+  font-size: 1.0em;
 }
 
 .search-box{
   margin: 50px;
-  box-sizing: border-box;
-  width: 10%;
+  box-sizing:content-box;
+  width: 1.0e,m%;
 }
 
 .submit{
@@ -35,10 +36,10 @@ body{
   position: relative;
   border: none;
   outline: none;
-  width: 80px;
-  height: 35px;
+  width: fit-content;
+  height: fit-content;
   background-color: #fd7014;
-  font-size: 100%;
+  font-size: 0.8em;
   color: #fff;
   border-radius: 7px;
   cursor: pointer;
@@ -109,6 +110,7 @@ button:active:before{
 }
 
 .fullWeatherData{
+
   font-size: 1.0em;
   position: relative;
 }
@@ -174,12 +176,12 @@ button:active:before{
 }
 
 .forecast-card{
+  /* display: flexbox; */
   background-color: #eeeeee;
   border: 2px solid black;
   width: 300px;
   height:370px;
-  z-index: 1;
-  padding:10px;
+] padding:10px;
   text-align:center;
   font-family:Arial, Helvetica, sans-serif;
 }
