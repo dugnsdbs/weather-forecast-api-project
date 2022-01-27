@@ -66,8 +66,10 @@ const weatherStates = {
 }
 
 const placeAndTime = document.querySelector('.place-and-time');
-const todaysForecast = document.querySelector('#todays-forecast');
+const todaysForecast = document.querySelector('#todays-forecast.marquee');
 const fiveDayForecast = document.querySelectorAll('div .forecast-card');
+const commentsBox = document.querySelector('.commentSubmittedBox')
+const tyMessage = document.querySelector('#thankYouMessage');
 let fiveDayForecastBannerText = document.querySelector('.five-days-title').textContent;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -79,10 +81,9 @@ function lookUpByLocation () {
     .then(res => res.json())
     .then(data => {
         getWeatherData(data);
-        console.log(data)
     })
     .catch(error => {
-        alert("Sorry, we don't have data on that location. Please try another!");
+        alert("Either there's been an error or we don't have data on that location. Please try again.");
         form.reset();
 })
 }
@@ -112,11 +113,11 @@ function displayFiveDayForecast (weatherData) {
         const wind = document.createElement('li');
         fiveDayData[selectDay].textContent = '';
         dayOfWeek[selectDay].innerHTML = `<strong>${week[(today + selectDay) % 7]}</strong>`; 
-        highTemp.textContent =  `HIGH: ${roundOff(celsiusToF(daysWeather.max_temp))}° F`;
-        lowTemp.textContent = `LOW: ${roundOff(celsiusToF(daysWeather.min_temp))}° F,` 
-        conditions.textContent = `CONDITIONS: ${sentenceCase(daysWeather.weather_state_name)}.`;
-        humidity.textContent =  `HUMIDITY: ${roundOff(daysWeather.humidity)}%`;
-        wind.textContent = `WIND SPEED: ${roundOff(daysWeather.wind_speed)} mph`;
+        highTemp.innerHTML =  `<strong>HIGH:</strong> ${roundOff(celsiusToF(daysWeather.max_temp))}° F`;
+        lowTemp.innerHTML = `<strong>LOW:</strong> ${roundOff(celsiusToF(daysWeather.min_temp))}° F,` 
+        conditions.innerHTML = `<strong>CONDITIONS:</strong> ${sentenceCase(daysWeather.weather_state_name)}.`;
+        humidity.innerHTML =  `<strong>HUMIDITY:</strong> ${roundOff(daysWeather.humidity)}%`;
+        wind.innerHTML = `<strong>WIND SPEED:</strong> ${roundOff(daysWeather.wind_speed)} mph`;
         weatherImgs[selectDay].src = `https://www.metaweather.com/static/img/weather/${daysWeather.weather_state_abbr}.svg`;
         fiveDayData[selectDay].appendChild(highTemp);
         fiveDayData[selectDay].appendChild(lowTemp);
@@ -133,7 +134,7 @@ function displayCurrentForecast (weatherData) {
     currentCity = weatherData.title;
     currentCityLocation = weatherData.parent.title;
     placeAndTime.textContent = `Forecast for ${weatherData.title}, ${weatherData.parent.title} today, ${week[today]} 
-                                ${month[date.getMonth() + 1]} ${ddDay}, ${yyyyYear}`
+                                ${month[date.getMonth() + 1]} ${ddDay}, ${yyyyYear}:`
     todaysForecast.textContent = `TEMPERATURES FROM ${roundOff(celsiusToF(thisForecast.min_temp))}–${roundOff(celsiusToF(thisForecast.max_temp))}° F...${thisForecast.weather_state_name.toUpperCase()}...${roundOff(thisForecast.humidity)}% HUMIDITY...WINDS REACHING ${roundOff(thisForecast.wind_speed)} MPH...`;
 }
 
@@ -157,7 +158,7 @@ let totalDonations = 0;
 function addingAmount(amountInput){
     const amountUpdated = document.querySelector(".amountChange");
     totalDonations += parseInt(amountInput);
-    amountUpdated.innerText = `Total Donations: $${totalDonations}`;
+    amountUpdated.innerHTML = `Thank you! Total Donations:<br> <span class ="blinking"> $${totalDonations}</span>!`;
     }
 
 const commentForm = document.querySelector("form.commentForm");
@@ -169,10 +170,10 @@ commentForm.addEventListener('submit', (e)=>{
 })
 
 function addingComment(commentInput){
-    const storeComment = document.querySelector('.commentSubmittedBox');
     const paragraphComment = document.createElement('p');
     paragraphComment.innerHTML = `<em>Anonymous comment on the forecast for ${currentCity}, ${currentCityLocation}:</em> <br><br> ${commentInput}<br><br>`;
-    storeComment.appendChild(paragraphComment);
+    commentsBox.style.display = 'block';
+    commentsBox.appendChild(paragraphComment);
 
     const btn = document.createElement('button');
     btn.innerText = "delete";

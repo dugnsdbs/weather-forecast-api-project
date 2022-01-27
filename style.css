@@ -1,28 +1,39 @@
 body{
-  background-color: #222831;
+  background-color: silver;
   box-sizing: border-box;
 }
 
 .nav-box{
-  background-color: #393E46;
-  width: 90%;
-  height: 50px;
+  background: linear-gradient(223deg, #ff0000, #bcc6ff, #ffffff);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  -o-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;;
+  width: auto;
+  height: fit-content;
   margin: 10px;
   padding: 20px;
-  border: 2px solid black;
+  border: 1px solid gray;
   white-space: nowrap;
   display:flex;
+  justify-content:center;
 }
 
-.website{
+#site-header{
   font-size: 50px;
   color: #eeeeee;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding-left: 10px;
+  color:black;
+  display: flex;
+  justify-content:center;
+  align-items:
 }
 
 .search{
   font-size: 1.0em;
+  margin-top:5px;
 }
 
 .search-box{
@@ -38,22 +49,14 @@ body{
   outline: none;
   width: fit-content;
   height: fit-content;
-  background-color: #fd7014;
+  background-color: gold;
   font-size: 0.8em;
   color: #fff;
   border-radius: 7px;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
 }
-#donationBox{
-  margin: 20px;
-  box-sizing: border-box;
-  width: 200px;
-  height:40px;
-}
-.amountChange{
-  font-size: 40px;
-}
+
 /* button::before{
   content:"";
   position:absolute;
@@ -81,9 +84,6 @@ button:active:before{
   width: 100%;
   color:white;
 }
-.donationLetter{
-  font-size: 40px;
-}
 
 .small-box{
   font-size: 30px;
@@ -91,8 +91,10 @@ button:active:before{
 
 .todays-forecast-banner{
   width: auto;
-  background-color: #fd7014;
+  background-color: gold;
   text-align: center;
+  display:flex;
+  justify-content:center;
   font-size: 40px;;
   border: 2px solid black;
   color:white;
@@ -116,58 +118,71 @@ button:active:before{
 }
 
 .place-and-time{
-  width: auto;
-  background-color: #fd7014;
   text-align: center;
-  font-size: 2.0em;
+  font-size: 1.5em;
   font-family:Arial, Helvetica, sans-serif;
+  font-weight:normal;
   font-style:italic;
-  border: 2px solid black;
-  color:white;
+  color:darkred;
   padding:5px;
+  margin:0px;
 }
 
-#todays-forecast-container{
-  background-color: #eeeeee;
+.current-forecast{
+  background: linear-gradient(184deg, #ff0000, #bcc6ff, #ffffff);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  -o-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
   width: auto;
-  height: fit-content;
-  margin: 10px;
-  padding: 20px;
-  border: 2px solid black;
-  overflow: hidden;
-  white-space: nowrap
+  justify-content: center;
+  overflow:hidden;
 }
 
-#todays-forecast{
-  font-size: 2.5em;
+#todays-forecast.marquee{
+  font-size: 2.0em;
+  text-align:center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:1.75em;
+  color:orangered;
+  height: fit-content;
+  width:auto;
+  padding: 15px;
+  white-space: nowrap;
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  font-family: Arial, Helvetica, sans-serif;
-  color:blue;
-  
-  -moz-animation: my-animation 20s linear infinite;
-  -webkit-animation: my-animation 20s linear infinite;
-  animation: my-animation 20s linear infinite;
+  font-family: Arial, Helvetica, sans-serif;  
+  -moz-animation: my-animation 10s linear infinite;
+  -webkit-animation: my-animation 10s linear infinite;
+  animation: my-animation 15s linear infinite;
 }
 
 .five-days-title{
   width: auto;
-  background-color: #fd7014;
+  background-color:darkred;
   text-align: center;
-  font-size: 2.0em;
+  font-size: 1.5em;
   font-family:Arial, Helvetica, sans-serif;
   font-style:italic;
-  border: 2px solid black;
+  letter-spacing: 0.5em;
+  /* border: 2px solid black; */
+  margin-top:3px;
   color:white;
   padding:5px;
 }
 
 .parent-box{
-  background-color: #393e46;
+  background: linear-gradient(223deg, #ff0000, #bcc6ff, #ffffff);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  -o-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;;
   width:auto;
-  height: 400px;
-  margin: 10px;
+  height: fit-content;
+  margin: 3px;
   padding: 20px;
   display: flex;
   justify-content:center;
@@ -176,14 +191,15 @@ button:active:before{
 }
 
 .forecast-card{
-  /* display: flexbox; */
-  background-color: #eeeeee;
-  border: 2px solid black;
   width: 300px;
-  height:370px;
+  height:fit-content;
 ] padding:10px;
+  margin:10px;
   text-align:center;
   font-family:Arial, Helvetica, sans-serif;
+  font-size:0.98em;
+  overflow:hidden;
+  
 }
 
 .parent-weather-today{
@@ -198,14 +214,16 @@ button:active:before{
 
 .footer{
   width: auto;
-  background-color: #fd7014;
+  background-color: darkblue;
   text-align: center;
   font-family:Arial, Helvetica, sans-serif;
   font-style:italic;
-  font-size: 40px;
+  font-size: 1.5em;
+  letter-spacing:1.0em;
   border: 2px solid black;
   color:white;
   padding:5px;
+  
 }
 
 .image{
@@ -214,9 +232,9 @@ button:active:before{
 }
 
 .commentBox{
-  background-color: #393e46;
+  background-color: white;
   width:auto;
-  height: 150px;
+  height: fit-content;
   margin: 10px;
   padding: 20px;
   display: flex;
@@ -226,11 +244,10 @@ button:active:before{
 }
 #comments{
   width: 500px;
-  height: 130px;
+  height: fit-content;
 }
 
 .commentSubmittedBox{
-  background-color: #393e46;
   width:auto;
   height:fit-content;
   margin: 10px;
@@ -241,6 +258,89 @@ button:active:before{
   border: 2px solid black;
   color:white;
   font-size: 20px;
+  display:none;
+}
+
+#donationBox{
+  margin: 20px;
+  box-sizing: fit-content;
+  width: 200px;
+  height:fit-content;
+}
+.amountChange{
+  margin-top:5px;
+  margin-bottom:100px;
+  position:relative;
+  font-size: 40px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  overflow:hidden;
+  overflow-wrap: none;
+  letter-spacing:0.05em;
+  display:flex;
+  justify-content:center;
+  padding-bottom:50px;
+}
+
+.blinking{
+  animation: blinker 1s linear infinite;
+}
+
+li {
+  padding:5px;
+  list-style:none;
+}
+
+a {
+  font-style:normal;
+  text-decoration:transparent;
+}
+
+#credits{
+  background: linear-gradient(223deg, #ff0000, #bcc6ff, #ffffff);
+  width: auto;
+  height: fit-content;
+  margin-top:35px;
+  padding: 20px;
+  border: 1px solid gray;
+  font-size:0.8em;
+  font-family:Arial, Helvetica, sans-serif;
+  display:flex;
+  justify-content: center;
+  bottom:0;
+}
+
+/* #credits{
+  width: auto;
+  background-color: darkblue;
+  text-align: center;
+  font-family:Arial, Helvetica, sans-serif;
+  font-style:italic;
+  font-size: 1.5em;
+  letter-spacing:1.0em;
+  border: 2px solid black;
+  color:white;
+  padding:5px;
+} */
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:48% 0%}
+  50%{background-position:53% 100%}
+  100%{background-position:48% 0%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:48% 0%}
+  50%{background-position:53% 100%}
+  100%{background-position:48% 0%}
+}
+@-o-keyframes AnimationName {
+  0%{background-position:48% 0%}
+  50%{background-position:53% 100%}
+  100%{background-position:48% 0%}
+}
+@keyframes AnimationName {
+  0%{background-position:48% 0%}
+  50%{background-position:53% 100%}
+  100%{background-position:48% 0%}
 }
 
 /* for Firefox */
@@ -265,4 +365,10 @@ button:active:before{
     -moz-transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
+  }
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
   }

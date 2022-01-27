@@ -9,7 +9,7 @@
   <nav>
     <div class ="nav-box">
       <form class ='area-check'>
-        <a class ="website">Weather Channel</a>
+        <a id="site-header" href="#credits">Weather Channel</a></a>
         <a class ="search-box">
         <input type='text' class = " search" name='city-name-zipcode' placeholder = "Search by city" id="locationSearch"/> 
         <button class = 'submit' type = "submit" id="location_seach"> Search</button>
@@ -23,12 +23,11 @@
   <!-- <div class = "todays-forecast-banner">TODAY</div> -->
   <div class ='current-forecast'>
     <h2 class ="place-and-time">display the current location and hour (search submit)</h2>
-  <div id="todays-forecast-container"><div id = "todays-forecast">display today temperature and weather condition (today click)</div></div>
+    <div id="todays-forecast" class="marquee"> </div>
   </div>
 
   <div class = "five-days-title">Five-Day Forecast</div>
   <div class ="parent-box">
-    
       <div class = "forecast-card" >
         <span class = "dayOfWeek"></span>
         <img class = "weather-img" src = "">
@@ -56,7 +55,7 @@
       </div>
   </div>
 
-  <div class = "footer">Comment</div>
+  <div class = "footer">Leave a Comment</div>
 
   <div class ="commentBox">
     <form class = "commentForm" type= "text">
@@ -68,17 +67,18 @@
   </div>
   <div class="commentSubmittedBox">
   </div>
+  <div class = "footer">Donate</div>
 
   <div class ="menu">
     <form class ='donation' type="number">
-       <a class ="donationLetter" >Donate:</a>
        <a class ="amountInput-box">
        <input type='number' class = "click" name='newValue' placeholder = "Enter $ amount" id="donationBox"/> 
+       <button class = 'submit' type = "submit" id="amount_click"> Donate!</button>
        <a class = "amountChange"></a>
-       <button class = 'submit' type = "submit" id="amount_click"> click</button>
        </a>
     </form>
   </div>
+  <div id='credits'>A project by Yeohoon Yoon and Aaron Kaplan based on the&nbsp;<a href="https://www.metaweather.com/api/">MetaWeather API</a></div>
   <script src="./index.js"></script>
 </body>
 </html>
